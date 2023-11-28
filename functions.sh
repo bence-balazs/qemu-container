@@ -9,7 +9,6 @@ qemu_start() {
             -enable-kvm \
             -cpu "host,migratable=on,hv-time=on,hv-relaxed=on,hv-vapic=on,hv-spinlocks=0x1fff,hv-vpindex=on,hv-synic=on,hv-stimer=on,hv-reset=on"\
             -smp "sockets=1,cores=${VM_CORE},threads=1,dies=1" \
-            -bios /usr/share/ovmf/bios.bin \
             -boot d \
             -m "${VM_MEMORY}" \
             -mem-prealloc \
