@@ -10,7 +10,7 @@ if ! [ -c /dev/kvm ]; then
     mknod /dev/kvm c 10 232
 fi
 
-qemu-img create -o preallocation=full -f "raw" "disk.img" "35G"
+qemu-img create -f "raw" "/root/disk.img" "35G"
 
 /easy-novnc &
 
