@@ -2,7 +2,7 @@
 source /opt/functions.sh
 
 set -e
-echo "start..."
+echo "container starting..."
 
 # Set KVM node
 if ! [ -c /dev/kvm ]; then
@@ -10,8 +10,13 @@ if ! [ -c /dev/kvm ]; then
     mknod /dev/kvm c 10 232
 fi
 
-qemu-img create -f "raw" "/root/disk.img" "35G"
+if ! [ -f "/root/disk.img" ]; then
+    echo "creating disk.img..."
+    qemu-img create -f "raw" "/root/disk.img" "35G"
+fi
 
+echo "Startin novnc..."
 /easy-novnc &
 
+echo "Starting qemu..."
 qemu_start ${CPU_CORE} ${MEMORY} ${ISO}
