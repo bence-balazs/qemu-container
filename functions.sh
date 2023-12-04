@@ -16,7 +16,7 @@ qemu_start() {
             -overcommit mem-lock=off \
             -no-user-config \
             -net nic,model=virtio -net user \
-            -drive "if=ide,driver=raw,file=/root/disk.img,index=2" \
+            -drive "if=virtio,driver=raw,file=/root/disk.img,index=2" \
             ${VM_ISO} \
             -rtc base=localtime,clock=host \
             -usb -device usb-tablet \
