@@ -23,11 +23,11 @@ INSTALL_CD="-drive file=/root/win.iso,media=cdrom,index=1 "
 REBOOT_OFF="-no-reboot "
 
 # Start qemu with cd inserted and with -no-reboot
-if [ ${INIT} == 1 ]; then
+if [ ${BOOT_FROM_CD} == 1 ]; then
     echo "CD - Starting qemu with CD inserted"
     qemu_start ${CPU_CORE} ${MEMORY} "${INSTALL_CD}" "${REBOOT_OFF}"
 fi
-INIT=0
+BOOT_FROM_CD=0
 
 # Start qemu without CD
 echo "NO CD - Starting qemu without CD inserted"
