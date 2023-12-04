@@ -2,7 +2,8 @@ FROM alpine:3.18.0
 
 ENV CPU_CORE="4" \
     MEMORY="6144" \
-    ISO=""
+    ISO="" \
+    INIT=0
 
 RUN apk add qemu-system-x86_64 qemu-img ovmf \
     && rm -rf /var/cache/apk/*
