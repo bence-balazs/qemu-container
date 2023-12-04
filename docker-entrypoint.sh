@@ -26,8 +26,8 @@ REBOOT_OFF="-no-reboot "
 if [ ${INIT} == 1 ]; then
     echo "CD - Starting qemu with CD inserted"
     qemu_start ${CPU_CORE} ${MEMORY} "${INSTALL_CD}" "${REBOOT_OFF}"
-    INIT=0
 fi
+INIT=0
 
 # Start qemu without CD
 echo "NO CD - Starting qemu without CD inserted"
