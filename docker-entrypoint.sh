@@ -19,7 +19,7 @@ echo "Startin novnc..."
 /easy-novnc &
 
 # qemu flags
-INSTALL_CD="-drive file="/root/qemu-container/iso/win.iso",media=cdrom,index=1 "
+INSTALL_CD="-drive file=/root/qemu-container/iso/win.iso,media=cdrom,index=1 "
 REBOOT_OFF="-no-reboot "
 
 # Start qemu with cd inserted and with -no-reboot
