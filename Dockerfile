@@ -4,7 +4,7 @@ ENV CPU_CORE="4" \
     MEMORY="6144" \
     ISO=""
 
-RUN apk add qemu-system-x86_64 qemu-img \
+RUN apk add qemu-system-x86_64 qemu-img ovmf \
     && rm -rf /var/cache/apk/*
 
 # Copy docker-entrypoint.sh
